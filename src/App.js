@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+// Importing routing components from react-router-dom
+import { Routes, Route } from "react-router-dom"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Importing custom components
+import Navbar from "./components/Navbar"
+import Home from "./components/Home"
+import Wheel from "./components/Wheel"
+import Activity from "./components/Activity"
+import Documentation from "./components/Documentation"
+import HabitFunZone from "./components/Habits"
+
+// Importing global styles
+import "./App.css"
+
+// App component as a Class Component
+import React, { Component } from "react";
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        {/* Layout: Navbar is visible on all pages */}
+        <Navbar />
+
+        <div className="main-content">
+          {/* Routes component: manages navigation */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/wheel" element={<Wheel />} />
+            <Route path="/activity" element={<Activity />} />
+            <Route path="/documentation" element={<Documentation />} />
+            <Route path="/habits" element={<HabitFunZone />} />
+            <Route path="/habits/:gameId" element={<HabitFunZone />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </div>
+      </div>
+    )
+  }
 }
 
-export default App;
+// Exporting App component as default
+export default App

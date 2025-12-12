@@ -1,0 +1,722 @@
+.habit-fun-zone {
+  background: linear-gradient(135deg, #ff9a9e, #fecfef, #fecfef);
+  min-height: 100vh;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.habit-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.habit-header {
+  text-align: center;
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+  background: rgba(255, 107, 107, 0.2);
+  color: #ff6b6b;
+  border: 2px solid #ff6b6b;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+  margin-bottom: 20px;
+}
+
+.back-button:hover {
+  background: #ff6b6b;
+  color: white;
+  transform: translateX(-5px);
+}
+
+/* Updated Header Navigation */
+.header-navigation {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.back-to-home-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.back-to-home-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.habit-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff6b6b;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.habit-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.game-area {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.stars-display {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, #ffd89b, #19547b);
+  border-radius: 15px;
+  color: white;
+}
+
+.stars-display h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.game-card {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+}
+
+.game-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.game-card.completed {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.game-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.game-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.game-hint {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.completion-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mini Game Styles */
+.mini-game {
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.game-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, #ff9a9e, #fecfef);
+  border-radius: 15px;
+  color: white;
+}
+
+.game-back-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+  margin-bottom: 15px;
+}
+
+.game-back-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.game-header h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.success-message {
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.success-message h3 {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.complete-btn {
+  background: linear-gradient(135deg, #ffd89b, #19547b);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.complete-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Clean-Up Game Styles */
+.cleanup-game .game-playground {
+  display: flex;
+  gap: 30px;
+  min-height: 400px;
+}
+
+.toy-box {
+  background: linear-gradient(135deg, #8360c3, #2ebf91);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  width: 200px;
+  height: fit-content;
+}
+
+.box-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.collected-count {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.play-area {
+  flex: 1;
+  position: relative;
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  border-radius: 15px;
+  min-height: 300px;
+}
+
+.toy-item {
+  position: absolute;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.toy-item:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Food Game Styles */
+.food-sorting {
+  text-align: center;
+}
+
+.current-food {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  border-radius: 15px;
+}
+
+.food-display {
+  margin-top: 15px;
+}
+
+.food-emoji {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.baskets {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.basket {
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  padding: 25px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-width: 200px;
+  min-height: 200px;
+}
+
+.basket:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.healthy-basket {
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
+}
+
+.unhealthy-basket {
+  background: linear-gradient(135deg, #ffa085, #ffb199);
+}
+
+.basket-items {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.basket-food {
+  font-size: 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Energy Game Styles */
+.energy-game .score {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.energy-game .game-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.energy-game .score,
+.energy-game .lights-status {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.energy-game .lights-status {
+  color: #ffd700;
+}
+
+.light-status {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.energy-tips {
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.energy-tips p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.house-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.room {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.light-bulb {
+  font-size: 3rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin: 10px 0;
+  display: block;
+}
+
+.light-bulb:hover {
+  transform: scale(1.2);
+}
+
+.light-bulb.on {
+  filter: drop-shadow(0 0 10px #ffff00);
+}
+
+/* Hygiene Game Styles */
+.hand-washing-steps {
+  text-align: center;
+}
+
+.progress-bar {
+  background: #e0e0e0;
+  height: 10px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+.current-step {
+  padding: 30px;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.step-emoji {
+  font-size: 4rem;
+  margin-bottom: 15px;
+}
+
+.step-button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 15px;
+}
+
+.step-button:hover {
+  transform: scale(1.05);
+}
+
+.steps-preview {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.step-preview {
+  font-size: 2rem;
+  opacity: 0.3;
+  transition: all 0.3s;
+}
+
+.step-preview.completed {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Traffic Game Styles */
+.traffic-game .game-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.traffic-game .score,
+.traffic-game .progress {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.signal-timer {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 15px 0;
+  color: white;
+  font-weight: bold;
+}
+
+.traffic-scene {
+  text-align: center;
+  padding: 20px;
+}
+
+.traffic-light {
+  display: inline-block;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.light {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 8px;
+  opacity: 0.2;
+  transition: all 0.5s ease;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.light.active {
+  opacity: 1;
+  box-shadow: 0 0 20px currentColor, 0 0 40px currentColor, inset 0 0 10px rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.road {
+  background: linear-gradient(135deg, #666, #444);
+  height: 100px;
+  border-radius: 10px;
+  position: relative;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  border: 3px solid white;
+  overflow: hidden;
+}
+
+.road::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(90deg, white 0px, white 20px, transparent 20px, transparent 40px);
+  transform: translateY(-50%);
+}
+
+.finish-line {
+  position: absolute;
+  right: 10px;
+  font-size: 2rem;
+  z-index: 2;
+}
+
+.car {
+  font-size: 2.5rem;
+  position: absolute;
+  transition: left 0.5s ease;
+  z-index: 3;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.game-controls {
+  margin-top: 20px;
+}
+
+.game-message {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.control-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.move-btn {
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
+}
+
+.reset-btn {
+  background: linear-gradient(135deg, #ffa085, #ffb199);
+}
+
+.control-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .habit-title {
+    font-size: 2rem;
+  }
+
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cleanup-game .game-playground {
+    flex-direction: column;
+  }
+
+  .baskets {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .house-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .energy-game .game-stats,
+  .traffic-game .game-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .control-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .control-btn {
+    width: 200px;
+  }
+
+  .back-to-home-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .habit-fun-zone {
+    padding: 10px;
+  }
+
+  .habit-title {
+    font-size: 1.5rem;
+  }
+
+  .game-area {
+    padding: 15px;
+  }
+
+  .house-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .road {
+    height: 80px;
+  }
+
+  .car {
+    font-size: 2rem;
+  }
+
+  .finish-line {
+    font-size: 1.5rem;
+  }
+
+  .light {
+    width: 40px;
+    height: 40px;
+  }
+}
